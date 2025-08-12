@@ -7,7 +7,7 @@ steps:
       - './scripts/health-check.sh'
     env:
       - 'PROJECT_ID=dgzn-terraform'
-      - 'GITHUB_APP_ID=80495728'
+      - 'GITHUB_APP_ID=1770057'
       - 'GITHUB_APP_PRIVATE_KEY_SECRET=github-app-private-key'
       - 'INSTALLATION_ID_SECRET=python-sdk-installation-id'
       - 'GITHUB_REPOSITORY=dg-ghtest/python-sdk'
@@ -21,7 +21,7 @@ steps:
       - './scripts/update.sh'
     env:
       - 'PROJECT_ID=dgzn-terraform'
-      - 'GITHUB_APP_ID=80495728'
+      - 'GITHUB_APP_ID=1770057'
       - 'GITHUB_APP_PRIVATE_KEY_SECRET=github-app-private-key'
       - 'INSTALLATION_ID_SECRET=python-sdk-installation-id'
       - 'GITHUB_REPOSITORY=dg-ghtest/python-sdk'
