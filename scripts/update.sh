@@ -13,8 +13,9 @@ echo "Repository: ${GITHUB_REPOSITORY}"
 echo "Timestamp: $(date)"
 
 # Copy utility scripts to workspace and source them
-cp /workspace/scripts/jwt-utils.sh /tmp/jwt-utils.sh
-cp /workspace/scripts/installation-helper.sh /tmp/installation-helper.sh
+# In the inline trigger context, scripts are in the cloned repository
+cp ./scripts/jwt-utils.sh /tmp/jwt-utils.sh
+cp ./scripts/installation-helper.sh /tmp/installation-helper.sh
 source /tmp/jwt-utils.sh
 
 # Create temporary files for secrets
