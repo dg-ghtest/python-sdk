@@ -110,7 +110,7 @@ EXISTING_PRS=$(curl -s -H "Authorization: Bearer ${GITHUB_TOKEN}" \
   -H "Accept: application/vnd.github.v3+json" \
   "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls?state=open" | \
   grep -A 5 -B 5 '"title".*timestamp update' | \
-  grep -o '"number": *[0-9]*' | sed 's/"number": *//')
+  grep -o '"number": *[0-9]*' | sed 's/"number": *//' || true)
 
 if [[ -n "${EXISTING_PRS}" ]]; then
     echo "Found existing timestamp update PRs, closing them..."
