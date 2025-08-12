@@ -140,6 +140,8 @@ git commit -m "Update timestamp to ${TIMESTAMP}"
 
 # Push the branch
 echo "Pushing branch ${BRANCH_NAME}..."
+# Configure git to use the token for push operations
+git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 git push origin "${BRANCH_NAME}"
 
 # Create new PR (always, since we closed any existing ones)
