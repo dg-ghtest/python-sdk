@@ -77,9 +77,11 @@ if ! test_github_app_auth "$GITHUB_TOKEN" "$GITHUB_REPOSITORY"; then
     exit 1
 fi
 
-# Generate ISO 8601 timestamp
+# Generate timestamp for display and branch naming
 TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-BRANCH_NAME="timestamp-update-${TIMESTAMP}"
+# Create Git-safe branch name (replace colons with dashes)
+BRANCH_TIMESTAMP=$(date -u +"%Y-%m-%d-%H-%M-%S")
+BRANCH_NAME="timestamp-update-${BRANCH_TIMESTAMP}"
 
 # Extract repo name from the current directory or environment
 REPO_NAME=$(basename "${PWD}")
